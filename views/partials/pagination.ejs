@@ -1,0 +1,20 @@
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="/<%if(pageNumber!=1){%><%= parseInt(pageNumber)-1 %><%}
+        else{%><%= 1 %><%}
+        %>" 
+      class="w3-bar-item w3-button w3-hover-black">«</a>
+     <% for (var i=1;i<=Math.ceil(pages/8);i++){
+      if( i == parseInt(pageNumber) ){ 
+      %>
+      <a href="/<%=i%>" class="w3-bar-item w3-black w3-hover-black" style="background-color:black !important;color:white !important"><%=i%></a>
+      <% } else{%>
+
+      <a href="/<%=i%>" class="w3-bar-item w3-black w3-hover-black"><%=i%></a>
+   <%}}%>
+      <a href="/<%if(pageNumber!=Math.ceil(pages/8)){%><%= parseInt(pageNumber)+1 %><%}else{
+        %><%= Math.ceil(pages/8) %><%}
+        %>" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>

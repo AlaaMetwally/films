@@ -1,0 +1,26 @@
+<html>
+<head><% include partials/head.ejs %></head>
+<body>
+<% include partials/header.ejs %>
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+<% include partials/search.ejs %>
+        <div class="w3-row-padding w3-padding-16 w3-center" id="film">
+              
+                <% 
+        filmarr=getFilms(films,pageNumber);
+        var counter=0;
+        var pages=films.length;
+        filmarr.forEach(function(film){
+            if(counter<8){%>
+    <div class="w3-quarter">    
+            <a href="film/<%=film.imdbID%>"><img src='<%= film.Poster %>' style="width:100%;height:61%;"></a>
+            <h5><%= film.Title %></h5>
+            <p>Film Description : <%= film.Type+' '+film.Year %></p>
+    </div><% counter++;}})%>
+</div> 
+
+<% include partials/pagination.ejs %>
+<% include partials/about.ejs %>
+<% include partials/footer.ejs %>
+</div>
+<% include partials/jsdefaults.ejs %>

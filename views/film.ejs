@@ -1,0 +1,15 @@
+<html>
+<head>
+<title><%= film.Title %></title>    
+<% include partials/head.ejs %></head>
+<body>
+<% include partials/header.ejs %>
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+<div class="w3-center" id="film">
+<h1><%=film.Title%></h1>
+<img src='<%= film.Poster %>' style="width:300px;height:444px;">
+<p>Film Description : <%= film.Type+' '+film.Year %></p>
+</div>
+<% include partials/footer.ejs %>
+</div>
+<% include partials/jsdefaults.ejs %>
